@@ -1,32 +1,49 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
+    <tab-bar>
+      <tab-bar-item path='/home'>
+        <img slot="item-icon" src="~@/assets/images/tabbar/index.svg" alt="">
+        <img slot="item-icon-active" src="~@/assets/images/tabbar/index-active.svg" alt="">
+        <span slot="item-text">首页</span>
+      </tab-bar-item>
+      <tab-bar-item path='/category'>
+        <img slot="item-icon" src="~@/assets/images/tabbar/category.svg" alt="">
+        <img slot="item-icon-active" src="~@/assets/images/tabbar/category-active.svg" alt="">
+        <span slot="item-text">分类</span>
+      </tab-bar-item>
+      <tab-bar-item path='/car'>
+        <img slot="item-icon" src="~@/assets/images/tabbar/car.svg" alt="">
+        <img slot="item-icon-active" src="~@/assets/images/tabbar/car-active.svg" alt="">
+        <span slot="item-text">购物车</span>
+      </tab-bar-item>
+      <tab-bar-item path='/profile'>
+        <img slot="item-icon" src="~@/assets/images/tabbar/profile.svg" alt="">
+        <img slot="item-icon-active" src="~@/assets/images/tabbar/profile-active.svg" alt="">
+        <span slot="item-text">我的</span>
+      </tab-bar-item>
+    </tab-bar>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import TabBar from '@/components/tabbar/TabBar'
+import TabBarItem from '@/components/tabbar/TabBarItem'
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: 'app',
+  data() {
+    return {
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    }
+  },
+  components: {
+    TabBar,
+    TabBarItem
+  }
 }
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped>
+  @import url(assets/css/base.css);
 </style>
