@@ -15,7 +15,8 @@
 <script>
 export default {
   props: {
-    path: String
+    path: String,
+    colorful: String
   },
   data() {
     return {

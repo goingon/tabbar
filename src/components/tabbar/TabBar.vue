@@ -1,11 +1,17 @@
 <template>
-  <div class="tab-bar">
+  <div :style="{color: colorful}" class="tab-bar">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    colorful: {
+      type: String,
+      default: '#000'
+    }
+  },
   data() {
     return {
 

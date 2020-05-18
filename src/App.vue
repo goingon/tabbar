@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <tab-bar>
+    <tab-bar :colorful='colorful'>
+      <!-- tab-bar-item可以改造成for循环 -->
       <tab-bar-item path='/home'>
         <img slot="item-icon" src="~@/assets/images/tabbar/index.svg" alt="">
         <img slot="item-icon-active" src="~@/assets/images/tabbar/index-active.svg" alt="">
@@ -34,7 +35,7 @@ export default {
   name: 'app',
   data() {
     return {
-
+      colorful: '#666'
     }
   },
   components: {
